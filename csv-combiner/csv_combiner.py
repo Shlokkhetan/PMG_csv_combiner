@@ -23,22 +23,18 @@ def combine(files):
 
         """Check if its .csv""" 
         if ext!= '.csv':
-            # raise TypeError
             raise Exception('File extension is not correct')
-            # print('File extension incorrect')
-            # return False
+           
         """Check if the path is correct""" 
         p = Path(files[i])
 
         if not p.exists():
             raise IOError('File does not exist')
-            # print('File does not exist')
-            # return False
+            
 
 
     for i in range(len(files)):
-        # if i==0:
-        #     print('email_hash,category,filename') 
+        
               
         """splitting path to obtain file name"""
         file_name = files[i].split('/')[-1]
