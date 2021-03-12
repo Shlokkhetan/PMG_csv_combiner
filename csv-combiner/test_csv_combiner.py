@@ -13,22 +13,21 @@ class test(unittest.TestCase):
 
 
     def test_1(self):
-        # self.assertRaises(IOError, csv_combiner.combine(['./fixtures_small/accessories.csv', './fixtures_small/clothi2ng.csv']))
-
+        """checks existennce of file"""
         with self.assertRaises(Exception) as context:
             csv_combiner.combine(['./fixtures/accessories.csv', './fixtures/clothi2ng.csv'])
 
         self.assertEqual('File does not exist', str(context.exception))
 
     def test_2(self):
-        # self.assertRaises(IOError, csv_combiner.combine(['./fixtures_small/accessories.csv', './fixtures_small/clothi2ng.csv']))
-
+        """checks for file extennsion"""
         with self.assertRaises(Exception) as context:
             csv_combiner.combine(['./fixtures/accessories.csv', './fixtures/clothing.xls'])
 
         self.assertEqual('File extension is not correct', str(context.exception))
 
     def test_filename_column_added(self):
+        """Checks if the filename collumn is added"""
 
 
         output = StringIO()
