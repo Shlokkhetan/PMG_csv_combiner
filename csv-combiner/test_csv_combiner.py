@@ -13,14 +13,14 @@ class test(unittest.TestCase):
 
 
     def test_1(self):
-        """checks existennce of file"""
+        """checks existence of file"""
         with self.assertRaises(Exception) as context:
             csv_combiner.combine(['./fixtures/accessories.csv', './fixtures/clothi2ng.csv'])
 
         self.assertEqual('File does not exist', str(context.exception))
 
     def test_2(self):
-        """checks for file extennsion"""
+        """checks for file extension"""
         with self.assertRaises(Exception) as context:
             csv_combiner.combine(['./fixtures/accessories.csv', './fixtures/clothing.xls'])
 
